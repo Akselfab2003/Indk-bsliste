@@ -1,0 +1,53 @@
+﻿<Window x:Name="Virksomheds_Indkøb" x:Class="Indkøbs_list_applikation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Indkøbs_list_applikation"
+        mc:Ignorable="d"
+        Title="Virksomheds indkøb" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="VælgVareKatagori" HorizontalAlignment="Left" Margin="41,60,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="SelectionChanged" />
+        <ComboBox x:Name="Afdelinger" HorizontalAlignment="Left" Margin="319,156,0,0" VerticalAlignment="Top" Width="155" SelectionChanged="Afdelinger_SelectionChanged"/>
+        <ListView x:Name="VareListe" HorizontalAlignment="Left" Height="235" Margin="41,156,0,0" VerticalAlignment="Top" Width="147" SelectionChanged="VareListe_SelectionChanged" PreviewMouseDown="DetectMousepress">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="DetectMousepress"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListViewItem Content="" Margin="0"/>
+        </ListView>
+        <ListView x:Name="Indkøbsliste" HorizontalAlignment="Left" Height="208" Margin="319,183,0,0" VerticalAlignment="Top" Width="155">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="Indkøbslister" HorizontalAlignment="Left" Height="235" Margin="605,156,0,0" VerticalAlignment="Top" Width="147">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="DetectMousepress2"  
+/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            
+        </ListView>
+        <Button x:Name="GemListe" Content="Gem liste" HorizontalAlignment="Left" Margin="513,250,0,0" VerticalAlignment="Top" Width="75" Click="GemListe_Click"/>
+        <Label x:Name="Label_1" Content="1. Vælg en katagori&#xD;&#xA;" HorizontalAlignment="Left" Margin="41,31,0,0" VerticalAlignment="Top" Width="116" Height="29"/>
+        <Label x:Name="Label_2" Content="2. Vælg en eller flere varer&#xD;&#xA;&#xD;&#xA;&#x9;Vare Liste:&#xA;" HorizontalAlignment="Left" Margin="41,100,0,0" VerticalAlignment="Top" Width="147" Height="56"/>
+        <Label x:Name="Label_3" Content="3. Afslut indkøbslisten med at&#xD;&#xA; klik på &quot;Gem liste&quot;&#xA;&#x9;Indkøbsliste:&#xA;" HorizontalAlignment="Left" Margin="319,100,0,0" VerticalAlignment="Top" Width="155" Height="56"/>
+        <Label x:Name="Label_3_Copy" Content="4. Få vist en liste ved at klikke på&#xD;&#xA; en af de nedenstående indkøbslister&#xD;&#xA;&#xA;&#x9;Indkøbslister:&#xA;" HorizontalAlignment="Left" Margin="572,88,0,0" VerticalAlignment="Top" Width="210" Height="75"/>
+
+    </Grid>
+</Window>
